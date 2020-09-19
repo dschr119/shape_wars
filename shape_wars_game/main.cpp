@@ -1,7 +1,8 @@
-#include <SFML/Graphics.hpp>
+#include "GameEngine.h"
 #include <iostream>
-#include <vector>
-using namespace std;
+
+
+/*
 
 const int H = 400;
 const int W = 800;
@@ -88,4 +89,13 @@ int main() {
 
 
 	return 0;
+}
+
+*/
+
+int main() {
+  
+  GameEngine game();
+
+  std::cout << "ran" << std::endl;
 }
