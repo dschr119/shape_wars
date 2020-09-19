@@ -2,6 +2,13 @@
 #include <iostream>
 
 
+int main() {
+  
+  GameEngine game;
+
+  std::cout << "ran" << std::endl;
+}
+
 /*
 
 const int H = 400;
@@ -83,7 +90,7 @@ int main() {
 		for (int i = 0; i < units; i++) window.draw(unit_sprites[i]);
 		for (int i = 0; i < en_units; i++) window.draw(en_unit_sprites[i]);
 
-		window.display();       // <-- display the window with the things drawn 
+		window.display();       // <-- display the window with the things drawn
 	}
 
 
@@ -92,10 +99,3 @@ int main() {
 }
 
 */
-
-int main() {
-  
-  GameEngine game;
-
-  std::cout << "ran" << std::endl;
-}

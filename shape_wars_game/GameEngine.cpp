@@ -48,11 +48,20 @@ void GameEngine::initializeGameWindow() {
 
 void GameEngine::initializeGameState() {}
 
-void GameEngine::initializeSpriteSystem() {}
+void GameEngine::initializeSpriteSystem() {
+  // call sprites
+}
 
 void GameEngine::initializeGuiSystem() {}
 
 // game engine functions
+
+/*
+ * This method contains the main game loop
+ * It takes no inputs
+ * 
+ */
+
 void GameEngine::startGame() {
 
 	window.create(sf::VideoMode(W, H), "SFML testing");
