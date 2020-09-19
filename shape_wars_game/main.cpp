@@ -95,7 +95,7 @@ int main() {
 
 int main() {
   
-  GameEngine game();
+  GameEngine game;
 
   std::cout << "ran" << std::endl;
 }

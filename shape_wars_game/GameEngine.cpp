@@ -55,8 +55,10 @@ void GameEngine::initializeGuiSystem() {}
 // game engine functions
 void GameEngine::startGame() {
 
-	while (window.isOpen()) {
+	window.create(sf::VideoMode(W, H), "SFML testing");
 
+	while (window.isOpen()) {
+    
 		sf::Event event;
 		while (window.pollEvent(event)) {
 

@@ -12,7 +12,7 @@ private:
   // window data
 	const int H = 400;
 	const int W = 800;
-	sf::RenderWindow window(sf::VideoMode(W, H), "SFML testing");
+	sf::RenderWindow window;
 
   // initialization functions
   void initializeGameWindow();
@@ -21,6 +21,10 @@ private:
   void initializeGuiSystem();
 
   // game data
+
+  int units = 0;
+  int en_units = 0;
+
 	sf::Texture textures[11];              // <-- create textures array
 	vector<sf::Sprite> bar_sprites;        // <-- create sprites vectors
 	vector<sf::Sprite> en_bar_sprites;
