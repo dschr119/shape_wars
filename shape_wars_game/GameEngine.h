@@ -25,8 +25,8 @@ private:
   int units = 0;
   int en_units = 0;
 
-	sf::Texture textures[11];              // <-- create textures array
-	vector<sf::Sprite> bar_sprites;        // <-- create sprites vectors
+	sf::Texture textures[11];
+	vector<sf::Sprite> bar_sprites;
 	vector<sf::Sprite> en_bar_sprites;
 	vector<sf::Sprite> unit_sprites;
 	vector<sf::Sprite> en_unit_sprites;
@@ -34,6 +34,8 @@ private:
 
 	sf::Sprite base;
 	sf::Sprite base0;
+
+  const string sourceFile = "C:/Users/David/source/repos/battle_bases/pics/";
 
   // game engine functions
   void startGame();

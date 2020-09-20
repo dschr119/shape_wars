@@ -4,17 +4,31 @@
 //initialization functions
 void GameEngine::initializeGameWindow() {
 
-	if (!textures[0].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/backdrop.png")) std::cout << "error" << std::endl;
-	if (!textures[1].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/barracks.png")) std::cout << "error" << std::endl;
-	if (!textures[2].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/base.png")) std::cout << "error" << std::endl;
-	if (!textures[3].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/cruiser.png")) std::cout << "error" << std::endl;
-	if (!textures[4].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/dreadnaut.png")) std::cout << "error" << std::endl;
-	if (!textures[5].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/en_barracks.png")) std::cout << "error" << std::endl;
-	if (!textures[6].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/en_base.png")) std::cout << "error" << std::endl;
-	if (!textures[7].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/en_cruiser.png")) std::cout << "error" << std::endl;
-	if (!textures[8].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/en_dreadnaut.png")) std::cout << "error" << std::endl;
-	if (!textures[9].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/en_scout.png")) std::cout << "error" << std::endl;
-	if (!textures[10].loadFromFile("C:/Users/David/source/repos/battle_bases/pics/scout.png")) std::cout << "error" << std::endl;
+	
+}
+
+void GameEngine::initializeGameState() {}
+
+
+/*
+ * This method initializes sprites
+ * with textures and coordinates, 
+ * handling possible errors
+ */
+
+void GameEngine::initializeSpriteSystem() {
+
+  // load textures, if the texture exists, from the source file
+
+  string fileNames[11] = { "backdrop", "barracks", "base", "cruiser", "dreadnaut", "en_barracks",
+                           "en_base", "en_cruiser", "en_dreadnaut", "en_scout", "scout" };
+
+  int i=0;
+  for( string name : fileNames ) {
+		if (!textures[i].loadFromFile(sourceFile + name +".png")) 
+      std::cout << "error, could not load '" << name << "'" << std::endl;
+    i++;
+  }
 
 
 	// set up bases
@@ -44,12 +58,8 @@ void GameEngine::initializeGameWindow() {
 		en_bar_sprites.push_back(barracks0);
 		en_bar_sprites[i].setPosition(sf::Vector2f(((W - 30) * 1.0f), ((i * (H / 4) + 30) * 1.0f)));
 	}
-}
+  
 
-void GameEngine::initializeGameState() {}
-
-void GameEngine::initializeSpriteSystem() {
-  // call sprites
 }
 
 void GameEngine::initializeGuiSystem() {}
@@ -64,7 +74,7 @@ void GameEngine::initializeGuiSystem() {}
 
 void GameEngine::startGame() {
 
-	window.create(sf::VideoMode(W, H), "SFML testing");
+	window.create(sf::VideoMode(W, H), "battle base testing");
 
 	while (window.isOpen()) {
     
